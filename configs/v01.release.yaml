@@ -1,0 +1,35 @@
+# Release manifest for the author-confirmed V01 configuration.
+# This is a documentation placeholder, not an executable configuration schema.
+# Map these values to the released implementation before public release.
+
+experiment: V01
+adapter:
+  checkpoint: Scenes-F2-01-epoch040.pt
+  mixed_pe_alpha: 0.05
+  mixed_pe_requires_grad: false
+  mixed_pe_in_adam: false
+
+training:
+  train_pairs: 4920
+  batch_size: 4
+  epochs: 40
+  batches_per_epoch: 1230
+  adam_updates: 49200
+  checkpoint_epoch: 40
+
+validation:
+  pairs: 2416
+  low_overlap_pairs: 1208
+  standard_overlap_pairs: 1208
+  purpose: inference_parameter_selection
+
+inference:
+  estimator: RANSAC-free
+  refinement_rounds: 0
+  tau_in_m: 0.05
+  tau_o_m: 0.05
+  tau_p_px: 3
+  theta_q: 0.30
+  conflict_rotation_deg: 5.0
+  conflict_translation_m: 0.20
+  dspv_weights: [1.0, 0.5, 0.3, 0.2]
