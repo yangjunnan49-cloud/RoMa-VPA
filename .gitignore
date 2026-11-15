@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Local builds and temporary output
+build/
+dist/
+.kimi-latex/
+tmp/
+temp/
+outputs/
+runs/
+wandb/
+*.log
+*.tmp
+*.temp
+
+# Local datasets and raw data
+datasets/
+raw_data/
+
+# Credentials and local secrets
+.env
+.env.*
+*.pem
+*.key
+
+# NOTE: Do not globally ignore *.pt or *.pth. The final adapter is
+# part of the planned release and must remain explicitly trackable.

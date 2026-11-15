@@ -38,6 +38,15 @@ third_party/    External source and weight-loading instructions
 
 See [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) for the remaining release tasks. Directory-level README files identify the intended contents and the commands or metadata that will accompany them.
 
+## Maintenance conventions
+
+- Before public release, keep the scaffold status explicit; placeholder directories are not a runnable implementation.
+- Keep every configuration and structured result associated with its run identifier and adapter checkpoint.
+- Release the trained adapter as a file where practical or through a verified download link, and record its SHA-256 checksum in `checkpoints/`.
+- Obtain datasets and third-party pretrained weights from their original sources; do not commit their binaries.
+- Do not commit credentials, raw datasets, temporary logs, caches, or local build artifacts.
+- When updating configurations or results, preserve the run/checkpoint mapping and update [RELEASE_CHECKLIST.md](RELEASE_CHECKLIST.md) accordingly.
+
 ## Reproduction target
 
 The intended reproduction path is:
